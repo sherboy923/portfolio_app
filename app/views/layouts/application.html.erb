@@ -1,14 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PortfolioApp</title>
+  <title>Sherman St. Hill Portfolio | <%= yield(:title) %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato" type="text/css">
+	<link href='http://fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
 </head>
 <body>
+<div class="container">
 
-<%= yield %>
+			<div id="top-navbar">
 
+				<div class="top-nav-logo">
+
+				</div>
+				<ul>
+					<li><a href="#">about</a></li>
+					<li><a href="#">my journey</a></li>
+					<li><a href="#">my projects</a></li>
+					<li><a href="#">contact</a></li>
+				</ul>
+			</div><!-- End of top-navbar-->
+
+			<div id="wrapper">
+				<%= yield %>
+			</div><!--End of wrapper-->
+
+			<div id="foot-navbar">
+				
+			</div><!--End of foot-navbar-->
+		</div>
 </body>
 </html>
