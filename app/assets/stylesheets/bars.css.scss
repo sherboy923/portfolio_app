@@ -1,0 +1,95 @@
+/* Effect 10: reveal, push out */
+
+#skills {
+	.cl-effect-10 {
+		margin-bottom: 30px;
+		a {
+			position: relative;
+			display: inline-block;
+			color: #FF6800;
+			overflow: hidden;
+			border: 1px solid #FF6800;
+			margin: 10px 0 -15px 0;
+			span {
+				display: block;
+				height: 40px;
+				width: 500px;
+				background: #FFF;
+				-webkit-transition: -webkit-transform 0.3s;
+				-moz-transition: -moz-transform 0.3s;
+				transition: transform 0.3s;
+				
+			}
+			&::before {
+				position: absolute;
+				z-index: -1;
+				width: 400px;
+				height: 40px;
+				background: #FF6800;
+				color: #fff;
+				content: attr(data-hover);
+				-webkit-transition: -webkit-transform 0.3s;
+				-moz-transition: -moz-transform 0.3s;
+				transition: transform 0.3s;
+				-webkit-transform: translateX(-25%);
+			}
+			&:hover span,
+			&:focus span {
+				-webkit-transform: translateX(100%);
+				-moz-transform: translateX(100%);
+				transform: translateX(100%);
+			}
+			&:hover::before,
+			&:focus::before {
+				-webkit-transform: translateX(0%);
+				-moz-transform: translateX(0%);
+				transform: translateX(0%);
+			}
+		}
+	}
+	.cl-effect-11 {
+		margin-bottom: 30px;
+		a {
+			position: relative;
+			display: inline-block;
+			color: #FF6800;
+			overflow: hidden;
+			border: 1px solid #FF6800;
+			margin: 10px 0 -15px 0;
+			span {
+				display: block;
+				height: 40px;
+				width: 500px;
+				background: #FFF;
+				-webkit-transition: -webkit-transform 0.3s;
+				-moz-transition: -moz-transform 0.3s;
+				transition: transform 0.3s;
+			}
+			&::before {
+				position: absolute;
+				z-index: -1;
+				width: 200px;
+				height: 40px;
+				background: #FF6800;
+				color: #fff;
+				content: attr(data-hover);
+				-webkit-transition: -webkit-transform 0.3s;
+				-moz-transition: -moz-transform 0.3s;
+				transition: transform 0.3s;
+				-webkit-transform: translateX(-25%);
+			}
+			&:hover span,
+			&:focus span {
+				-webkit-transform: translateX(100%);
+				-moz-transform: translateX(100%);
+				transform: translateX(100%);
+			}
+			&:hover::before,
+			&:focus::before {
+				-webkit-transform: translateX(0%);
+				-moz-transform: translateX(0%);
+				transform: translateX(0%);
+			}
+		}
+	}
+}

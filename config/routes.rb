@@ -1,13 +1,18 @@
 PortfolioApp::Application.routes.draw do
-  get "static_pages/home"
 
-  get "static_pages/about"
+  resources :inquiries, :only => [:new, :create] do
+    get 'thank_you', :on => :collection
+  end
 
-  get "static_pages/projects"
+  root to: 'static_pages#home'
 
-  get "static_pages/journey"
+  match '/contact', to: 'inquiries#new'
+  match '/inquiries', to: 'inquiries#thank_you'
 
-  get "static_pages/contact"
+  match '/about', to: 'static_pages#about'
+  match '/projects', to: 'static_pages#projects'
+  match '/journey', to: 'static_pages#journey'
+  match '/resume', to: 'static_pages#resume'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

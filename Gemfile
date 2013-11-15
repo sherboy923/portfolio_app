@@ -5,6 +5,9 @@ gem 'rails', '3.2.3'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'active_attr'
+gem 'pony', '~> 1.5.1'
+
 group :development, :test do
 	gem 'sqlite3', '1.3.5'
 	gem 'rspec-rails', '2.9.0'

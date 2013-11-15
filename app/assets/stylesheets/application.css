@@ -10,4 +10,10 @@
  *
  *= require_self
  *= require_tree .
-*/
+ */
+ 
+ .job-description {
+ 	text-align: justify;
+ }
+
+ 

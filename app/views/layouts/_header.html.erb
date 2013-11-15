@@ -1,0 +1,15 @@
+<header id="top-navbar">
+
+	<div class="top-nav-logo">		
+		<%= link_to image_tag("logo.png", alt: "My Logo", :size => '113x61'), root_path, id: "logo"  %>
+	</div>
+	<nav>
+		<ul class="cl-effect-10">
+			<%= nav_link "about me", about_path %>
+			<%= nav_link "my journey", journey_path %>
+			<%= nav_link "my projects", projects_path %>
+			<%= nav_link "resume", resume_path %>
+			<%= nav_link "contact", contact_path %>
+		</ul>
+	</nav>
+</header><!-- End of top-navbar--> 

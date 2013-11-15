@@ -1,41 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= full_title(yield(:title)) %></title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato" type="text/css">
+	<title><%= full_title(yield(:title)) %></title>
+	<%= stylesheet_link_tag    "application", :media => "all" %>
+	<%= javascript_include_tag "application" %>
+
+	<!-- Javascript files for dynamic page transition -->
+	<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" %>
+
+	<%= csrf_meta_tags %>
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato" type="text/css">
 	<link href='http://fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
 
 		<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-</head>
-<body>
-<div class="container">
-
-			<div id="top-navbar">
-
-				<div class="top-nav-logo">
-
+	</head>
+	<body>
+		<%= render 'layouts/header' %>
+		<div id="container">			
+			<div class="user-info">
+				<div id="profile_pic_frame">
+					<%= image_tag("profile_pic.png", :alt => "Profile Picture", :class => "profile_pic") %>
 				</div>
-				<ul>
-					<li><a href="#">about</a></li>
-					<li><a href="#">my journey</a></li>
-					<li><a href="#">my projects</a></li>
-					<li><a href="#">contact</a></li>
-				</ul>
-			</div><!-- End of top-navbar-->
-
+				<div id="profile_info">
+					<p>
+						<b>EMAIL</b><br/>
+						<%= mail_to("scsthill@gmail.com") %><br><br>
+						<b>NUMBER</b><br/>
+						773.717.2290<br><br>
+					</p>					
+				</div>
+			</div>
 			<div id="wrapper">
+				<% flash.each do |key, value| %>
+				<h3><%= content_tag(:div, value, class: "alert-#{key}") %></h3>
+				<% end %>
 				<%= yield %>
 			</div><!--End of wrapper-->
 
-			<div id="foot-navbar">
-				
-			</div><!--End of foot-navbar-->
-		</div>
-</body>
-</html>
+			
+		</div><!--End of container-->
+		<%= render 'layouts/footer' %>
+	</body>
+	</html>
